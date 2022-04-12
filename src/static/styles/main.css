@@ -1,0 +1,44 @@
+:root {
+  --black: #2c2c2c;
+  --primary: #5931c9;
+  --background: #eceef5;
+  --white: #fff;
+  --gray: #696969;
+  --rounded: 0.5rem;
+  --shadow: 0 0 0.3rem 0 var(--primary);
+  --space-sm: 1rem;
+  --space-md: 3rem;
+  --space-lg: 5rem;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  font-family: Helvetica, sans-serif;
+  font-size: 62.5%;
+  color: var(--black);
+}
+body {
+  background-color: var(--background);
+  overflow-y: scroll;
+}
+.container {
+  width: 108rem;
+  max-width: 90%;
+  margin: var(--space-lg) auto;
+}
+.sub_container {
+  margin-top: var(--space-lg);
+}
+img {
+  max-width: 100%;
+}
+h2 {
+  font-size: 1.8rem;
+}
+p {
+  font-size: 1.5rem;
+}
