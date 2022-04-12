@@ -11,7 +11,7 @@ export default {
   props: {
     categoriesList: {
       type: Array,
-      required: true
+      default: () => []
     }
   },
   components: {

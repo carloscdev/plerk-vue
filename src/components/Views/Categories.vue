@@ -41,7 +41,7 @@ export default {
   },
   computed: {
     isEmpty() {
-      return this.categoriesFiltered.length === 0 && !this.isLoading && !this.error
+      return this.categoriesFiltered?.length === 0 && !this.isLoading && !this.error
     },
     isError() {
       return this.error && !this.isLoading
@@ -68,6 +68,7 @@ export default {
         }
         const response = await fetch(url, params)
         const result = await response.json()
+        if (response.status !== 200) throw Error
         this.categoriesList = result.data
         this.categoriesFiltered = result.data
       } catch (error) {
@@ -79,7 +80,7 @@ export default {
     },
     filterCategories() {
       this.isLoading = true
-      this.categoriesFiltered = this.categoriesList.filter((category) => {
+      this.categoriesFiltered = this.categoriesList?.filter((category) => {
         return category.name[this.language]?.toLowerCase().includes(this.categoriesSearch.toLowerCase())
       })
       this.isLoading = false

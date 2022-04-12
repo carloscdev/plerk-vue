@@ -17,7 +17,7 @@ export default {
   props: {
     category: {
       type: Object,
-      required: true
+      default: () => {}
     }
   },
   data() {
